@@ -1,4 +1,5 @@
 import { Reveal } from "./reveal";
+import { Years } from "./years";
 import { SectionHeading } from "./section-heading";
 
 const experiences = [
@@ -55,7 +56,7 @@ export function Experience() {
     <section id="experience" className="py-28 px-6 lg:px-10 bg-card/40 border-y border-border">
       <div className="max-w-[1400px] mx-auto">
         <Reveal>
-          <SectionHeading eyebrow="Experience" title="17+ years of data excellence" />
+          <SectionHeading eyebrow="Experience" title={<><Years />+ years of data excellence</>} />
         </Reveal>
 
         <div className="relative ml-3 border-l border-border">

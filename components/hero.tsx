@@ -1,9 +1,10 @@
 import { ArrowRight, Linkedin, Mail, MapPin, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { site } from "@/lib/site";
+import { Years } from "./years";
 
 const stats = [
-  { value: "17+", label: "Years in enterprise data" },
+  { value: <><Years />+</>, label: "Years in enterprise data" },
   { value: "2025", label: "DAMA UK & Global award recognition" },
   { value: "4", label: "Microsoft Azure certifications" },
   { value: "LLM", label: "AI-led legacy modernisation" },
