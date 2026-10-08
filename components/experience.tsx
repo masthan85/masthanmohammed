@@ -52,8 +52,8 @@ const experiences = [
 
 export function Experience() {
   return (
-    <section id="experience" className="py-28 px-6 bg-card/40 border-y border-border">
-      <div className="max-w-5xl mx-auto">
+    <section id="experience" className="py-28 px-6 lg:px-10 bg-card/40 border-y border-border">
+      <div className="max-w-[1400px] mx-auto">
         <Reveal>
           <SectionHeading eyebrow="Experience" title="17+ years of data excellence" />
         </Reveal>
@@ -64,31 +64,33 @@ export function Experience() {
               <div className="group relative pl-10 pb-12 last:pb-0">
                 <span className="absolute -left-[7px] top-1.5 h-3.5 w-3.5 rounded-full bg-background ring-2 ring-primary shadow-[0_0_14px] shadow-primary/60 group-hover:scale-125 transition-transform" />
 
-                <div className="rounded-2xl border border-border bg-card p-7 transition-all group-hover:border-primary/50 group-hover:-translate-y-0.5">
-                  <span className="inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary ring-1 ring-primary/20">
-                    {exp.period}
-                  </span>
+                <div className="grid gap-6 rounded-2xl border border-border bg-card p-7 lg:grid-cols-[minmax(240px,340px)_1fr] lg:gap-12 transition-all group-hover:border-primary/50 group-hover:-translate-y-0.5">
+                  <div>
+                    <span className="inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary ring-1 ring-primary/20">
+                      {exp.period}
+                    </span>
+                    <h3 className="mt-4 text-xl font-semibold text-foreground">
+                      {exp.role}
+                    </h3>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      {exp.company} · {exp.location}
+                    </p>
+                  </div>
 
-                  <h3 className="mt-4 text-xl font-semibold text-foreground">
-                    {exp.role}
-                  </h3>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    {exp.company} · {exp.location}
-                  </p>
-
-                  <p className="mt-4 text-muted-foreground leading-relaxed">
-                    {exp.description}
-                  </p>
-
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {exp.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-medium text-primary"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                  <div>
+                    <p className="text-muted-foreground leading-relaxed lg:text-lg">
+                      {exp.description}
+                    </p>
+                    <div className="mt-5 flex flex-wrap gap-2">
+                      {exp.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-medium text-primary"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
