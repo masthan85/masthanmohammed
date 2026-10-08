@@ -1,4 +1,6 @@
 import { Database, Brain, Shield, Users } from "lucide-react";
+import { Reveal } from "./reveal";
+import { SectionHeading } from "./section-heading";
 
 const highlights = [
   {
@@ -29,40 +31,36 @@ const highlights = [
 
 export function About() {
   return (
-    <section id="about" className="py-24 px-6">
+    <section id="about" className="py-28 px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-16">
-          <span className="text-primary text-sm font-medium tracking-wide uppercase">
-            About
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-6">
-            Building Data Platforms That Drive Business Value
-          </h2>
-          <p className="text-muted-foreground max-w-3xl leading-relaxed">
+        <Reveal>
+          <SectionHeading
+            eyebrow="About"
+            title="Building data platforms that drive business value"
+          >
             Senior Data Architect and Principal Data Engineer with extensive
             background supporting treasury systems, equity markets, and
             large-scale financial data environments for global organisations.
-            Actively recognised through UK and global professional awards and
-            engaged in the DAMA UK community through mentoring and leadership.
-          </p>
-        </div>
+            Recognised through UK and global professional awards and engaged in
+            the DAMA UK community through mentoring and leadership.
+          </SectionHeading>
+        </Reveal>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {highlights.map((item) => (
-            <div
-              key={item.title}
-              className="p-6 rounded-xl border border-border bg-card hover:border-primary/50 transition-colors group"
-            >
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                <item.icon size={24} className="text-primary" />
+        <div className="grid sm:grid-cols-2 gap-5">
+          {highlights.map((item, i) => (
+            <Reveal key={item.title} delay={i * 80}>
+              <div className="card-glow group h-full rounded-2xl border border-border bg-card p-7 transition-all hover:-translate-y-1 hover:border-primary/50">
+                <div className="mb-5 grid h-12 w-12 place-items-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/20 transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                  <item.icon size={22} />
+                </div>
+                <h3 className="text-lg font-semibold text-foreground mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {item.description}
+                </p>
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">
-                {item.title}
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {item.description}
-              </p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

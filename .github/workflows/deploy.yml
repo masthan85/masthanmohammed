@@ -27,7 +27,16 @@ jobs:
           node-version: 22
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm build
+      - name: Build
+        run: |
+          # <owner>.github.io repos are served from the domain root; any other repo from /<repo>
+          REPO="${GITHUB_REPOSITORY#*/}"
+          if [ "$REPO" = "${GITHUB_REPOSITORY_OWNER}.github.io" ]; then
+            export NEXT_PUBLIC_BASE_PATH=""
+          else
+            export NEXT_PUBLIC_BASE_PATH="/$REPO"
+          fi
+          pnpm build
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out
