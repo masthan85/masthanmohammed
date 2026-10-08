@@ -31,8 +31,8 @@ const highlights = [
 
 export function About() {
   return (
-    <section id="about" className="py-28 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section id="about" className="py-28 px-6 lg:px-10">
+      <div className="max-w-[1400px] mx-auto">
         <Reveal>
           <SectionHeading
             eyebrow="About"
@@ -46,7 +46,7 @@ export function About() {
           </SectionHeading>
         </Reveal>
 
-        <div className="grid sm:grid-cols-2 gap-5">
+        <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-5">
           {highlights.map((item, i) => (
             <Reveal key={item.title} delay={i * 80}>
               <div className="card-glow group h-full rounded-2xl border border-border bg-card p-7 transition-all hover:-translate-y-1 hover:border-primary/50">

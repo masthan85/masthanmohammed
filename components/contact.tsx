@@ -11,8 +11,8 @@ const channels = [
 
 export function Contact() {
   return (
-    <section id="contact" className="px-6 pt-28 pb-10">
-      <div className="max-w-5xl mx-auto">
+    <section id="contact" className="px-6 lg:px-10 pt-28 pb-10">
+      <div className="max-w-6xl mx-auto">
         <Reveal>
           <div className="relative overflow-hidden rounded-3xl border border-primary/30 bg-card p-8 md:p-14 text-center">
             <div aria-hidden className="absolute inset-0 -z-0 bg-grid opacity-60" />

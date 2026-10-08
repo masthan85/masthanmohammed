@@ -72,8 +72,8 @@ const skillCategories = [
 
 export function Skills() {
   return (
-    <section id="skills" className="py-28 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section id="skills" className="py-28 px-6 lg:px-10">
+      <div className="max-w-[1400px] mx-auto">
         <Reveal>
           <SectionHeading eyebrow="Expertise" title="Skills & technologies" />
         </Reveal>

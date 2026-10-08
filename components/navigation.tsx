@@ -24,10 +24,10 @@ export function Navigation() {
   }, []);
 
   useEffect(() => {
-    const ids = [...navItems.map((i) => i.href.slice(1)), "contact"];
+    const ids = ["top", ...navItems.map((i) => i.href.slice(1)), "contact"];
     const io = new IntersectionObserver(
       (entries) => {
-        entries.forEach((e) => e.isIntersecting && setActive(e.target.id));
+        entries.forEach((e) => e.isIntersecting && setActive(e.target.id === "top" ? "" : e.target.id));
       },
       { rootMargin: "-40% 0px -55% 0px" },
     );
@@ -41,7 +41,7 @@ export function Navigation() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-4 pt-4">
       <nav
-        className={`mx-auto max-w-5xl rounded-2xl px-5 py-3 transition-all duration-300 ${
+        className={`mx-auto max-w-[1400px] rounded-2xl px-5 py-3 transition-all duration-300 ${
           isScrolled || isMobileMenuOpen
             ? "bg-background/70 backdrop-blur-xl border border-border shadow-lg shadow-black/30"
             : "border border-transparent"

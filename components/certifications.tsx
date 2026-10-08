@@ -24,8 +24,8 @@ const awards = [
 
 export function Certifications() {
   return (
-    <section id="certifications" className="py-28 px-6 bg-card/40 border-y border-border">
-      <div className="max-w-6xl mx-auto">
+    <section id="certifications" className="py-28 px-6 lg:px-10 bg-card/40 border-y border-border">
+      <div className="max-w-[1400px] mx-auto">
         <Reveal>
           <SectionHeading eyebrow="Recognition" title="Certifications & awards" />
         </Reveal>
@@ -36,7 +36,7 @@ export function Certifications() {
               <Award className="text-primary" size={22} />
               Professional certifications
             </h3>
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid sm:grid-cols-2 gap-4 xl:gap-5">
               {certifications.map((cert) => (
                 <div
                   key={cert.title}

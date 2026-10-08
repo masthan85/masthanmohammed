@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
+import { yearsOfExperience } from '@/lib/experience'
 import './globals.css'
 
 const geistSans = Geist({ subsets: ['latin'], variable: '--font-geist-sans' })
@@ -8,7 +9,7 @@ const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono'
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
 
 const description =
-  'Senior Data Architect and Principal Data Engineer with 17+ years of experience in enterprise data platforms, Databricks, and AI-enabled data modernisation.'
+  `Senior Data Architect and Principal Data Engineer with ${yearsOfExperience()}+ years of experience in enterprise data platforms, Databricks, and AI-enabled data modernisation.`
 
 export const metadata: Metadata = {
   title: 'Masthan Mohammed | Senior Data Architect',
