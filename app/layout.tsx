@@ -1,15 +1,25 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const _geist = Geist({ subsets: ["latin"] });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
+const geistSans = Geist({ subsets: ['latin'], variable: '--font-geist-sans' })
+const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono' })
+
+const description =
+  'Senior Data Architect and Principal Data Engineer with 17+ years of experience in enterprise data platforms, Databricks, and AI-enabled data modernisation.'
 
 export const metadata: Metadata = {
   title: 'Masthan Mohammed | Senior Data Architect',
-  description: 'Senior Data Architect and Principal Data Engineer with 17+ years of experience in enterprise data platforms, Databricks, and AI-enabled data modernisation.',
-  generator: 'v0.app',
+  description,
+  authors: [{ name: 'Masthan Mohammed' }],
+  keywords: ['Data Architect', 'Databricks', 'Data Engineering', 'Data Governance', 'London'],
+  openGraph: {
+    title: 'Masthan Mohammed | Senior Data Architect',
+    description,
+    type: 'website',
+    locale: 'en_GB',
+  },
   icons: {
     icon: [
       {
@@ -29,14 +39,28 @@ export const metadata: Metadata = {
   },
 }
 
+export const viewport: Viewport = {
+  themeColor: '#0d1117',
+  colorScheme: 'dark',
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="bg-background">
+    <html
+      lang="en"
+      className={`dark bg-background ${geistSans.variable} ${geistMono.variable}`}
+    >
       <body className="font-sans antialiased">
+        <a
+          href="#about"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
+        >
+          Skip to content
+        </a>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
