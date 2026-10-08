@@ -1,36 +1,20 @@
 import { Award, Trophy } from "lucide-react";
 
 const certifications = [
-  {
-    title: "Databricks Certified Data Engineer",
-    issuer: "Databricks",
-    type: "certification",
-  },
-  {
-    title: "AWS Certified Solutions Architect",
-    issuer: "Amazon Web Services",
-    type: "certification",
-  },
-  {
-    title: "Azure Data Engineer Associate",
-    issuer: "Microsoft",
-    type: "certification",
-  },
-  {
-    title: "DAMA UK Recognition",
-    issuer: "DAMA UK Community",
-    type: "award",
-  },
+  { title: "Azure AI Engineer Associate", issuer: "Microsoft" },
+  { title: "Azure AI Fundamentals", issuer: "Microsoft" },
+  { title: "Azure Data Fundamentals", issuer: "Microsoft" },
+  { title: "Azure Fundamentals", issuer: "Microsoft" },
 ];
 
 const awards = [
   {
-    title: "UK Professional Award",
+    title: "DAMA Practitioner Award 2025 (Runner-Up)",
     description:
-      "Recognised for excellence in data architecture and engineering leadership",
+      "Recognised for excellence in data management practice by DAMA UK",
   },
   {
-    title: "Global Industry Recognition",
+    title: "Global Recognition Award 2025",
     description:
       "Acknowledged for contributions to AI-enabled data modernisation practices",
   },

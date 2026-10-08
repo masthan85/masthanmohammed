@@ -1,5 +1,6 @@
 import { Mail, Linkedin, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
+import { site } from "@/lib/site";
 
 export function Contact() {
   return (
@@ -20,7 +21,7 @@ export function Contact() {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12">
           <Link
-            href="mailto:mdmasthancse@gmail.com"
+            href={`mailto:${site.email}`}
             className="flex items-center gap-3 px-6 py-4 rounded-xl border border-border bg-card hover:border-primary transition-colors group w-full sm:w-auto"
           >
             <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
@@ -29,13 +30,13 @@ export function Contact() {
             <div className="text-left">
               <p className="text-xs text-muted-foreground">Email</p>
               <p className="text-sm font-medium text-foreground">
-                mdmasthancse@gmail.com
+                {site.email}
               </p>
             </div>
           </Link>
 
           <Link
-            href="tel:+447825444008"
+            href={site.phoneHref}
             className="flex items-center gap-3 px-6 py-4 rounded-xl border border-border bg-card hover:border-primary transition-colors group w-full sm:w-auto"
           >
             <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
@@ -44,7 +45,7 @@ export function Contact() {
             <div className="text-left">
               <p className="text-xs text-muted-foreground">Phone</p>
               <p className="text-sm font-medium text-foreground">
-                +44 7825 444008
+                {site.phone}
               </p>
             </div>
           </Link>
@@ -52,7 +53,7 @@ export function Contact() {
 
         <div className="flex items-center justify-center gap-6">
           <Link
-            href="https://linkedin.com"
+            href={site.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             className="w-12 h-12 rounded-full bg-card border border-border flex items-center justify-center hover:border-primary hover:text-primary transition-colors text-muted-foreground"
@@ -61,7 +62,7 @@ export function Contact() {
             <Linkedin size={20} />
           </Link>
           <Link
-            href="mailto:mdmasthancse@gmail.com"
+            href={`mailto:${site.email}`}
             className="w-12 h-12 rounded-full bg-card border border-border flex items-center justify-center hover:border-primary hover:text-primary transition-colors text-muted-foreground"
             aria-label="Send Email"
           >
@@ -72,13 +73,13 @@ export function Contact() {
         {/* Location */}
         <div className="mt-12 flex items-center justify-center gap-2 text-muted-foreground">
           <MapPin size={16} className="text-primary" />
-          <span className="text-sm">London, United Kingdom</span>
+          <span className="text-sm">{site.location}</span>
         </div>
 
         {/* Footer */}
         <footer className="mt-16 pt-8 border-t border-border">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Masthan Mohammed. All rights reserved.
+            © {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>
         </footer>
       </div>

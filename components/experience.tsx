@@ -1,5 +1,3 @@
-import { ExternalLink } from "lucide-react";
-
 const experiences = [
   {
     period: "Current",
