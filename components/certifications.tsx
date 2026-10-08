@@ -1,4 +1,6 @@
-import { Award, Trophy } from "lucide-react";
+import { Award, Trophy, HeartHandshake } from "lucide-react";
+import { Reveal } from "./reveal";
+import { SectionHeading } from "./section-heading";
 
 const certifications = [
   { title: "Azure AI Engineer Associate", issuer: "Microsoft" },
@@ -22,69 +24,65 @@ const awards = [
 
 export function Certifications() {
   return (
-    <section id="certifications" className="py-24 px-6 bg-card">
+    <section id="certifications" className="py-28 px-6 bg-card/40 border-y border-border">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-16">
-          <span className="text-primary text-sm font-medium tracking-wide uppercase">
-            Recognition
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2">
-            Certifications & Awards
-          </h2>
-        </div>
+        <Reveal>
+          <SectionHeading eyebrow="Recognition" title="Certifications & awards" />
+        </Reveal>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Certifications */}
-          <div>
-            <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
-              <Award className="text-primary" size={24} />
-              Professional Certifications
+        <div className="grid lg:grid-cols-2 gap-10">
+          <Reveal>
+            <h3 className="mb-5 flex items-center gap-2 text-lg font-semibold text-foreground">
+              <Award className="text-primary" size={22} />
+              Professional certifications
             </h3>
-            <div className="space-y-4">
+            <div className="grid sm:grid-cols-2 gap-4">
               {certifications.map((cert) => (
                 <div
                   key={cert.title}
-                  className="p-4 rounded-lg border border-border bg-background hover:border-primary/50 transition-colors"
+                  className="rounded-2xl border border-border bg-background/60 p-5 transition-all hover:-translate-y-1 hover:border-primary/50"
                 >
-                  <h4 className="font-medium text-foreground">{cert.title}</h4>
-                  <p className="text-sm text-muted-foreground">{cert.issuer}</p>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-primary">
+                    {cert.issuer}
+                  </p>
+                  <h4 className="mt-2 font-medium text-foreground leading-snug">
+                    {cert.title}
+                  </h4>
                 </div>
               ))}
             </div>
-          </div>
+          </Reveal>
 
-          {/* Awards */}
-          <div>
-            <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
-              <Trophy className="text-primary" size={24} />
-              Industry Recognition
+          <Reveal delay={120}>
+            <h3 className="mb-5 flex items-center gap-2 text-lg font-semibold text-foreground">
+              <Trophy className="text-primary" size={22} />
+              Industry recognition
             </h3>
             <div className="space-y-4">
               {awards.map((award) => (
                 <div
                   key={award.title}
-                  className="p-4 rounded-lg border border-border bg-background hover:border-primary/50 transition-colors"
+                  className="rounded-2xl border border-primary/25 bg-gradient-to-br from-primary/10 to-transparent p-5"
                 >
                   <h4 className="font-medium text-foreground">{award.title}</h4>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="mt-1 text-sm text-muted-foreground">
                     {award.description}
                   </p>
                 </div>
               ))}
+              <div className="rounded-2xl border border-border bg-background/60 p-5">
+                <h4 className="flex items-center gap-2 font-medium text-foreground">
+                  <HeartHandshake size={18} className="text-primary" />
+                  DAMA UK community leadership
+                </h4>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  Actively engaged in the DAMA UK community through mentoring
+                  and leadership, contributing to the advancement of data
+                  management practices across the industry.
+                </p>
+              </div>
             </div>
-
-            {/* DAMA UK */}
-            <div className="mt-8 p-6 rounded-xl bg-primary/10 border border-primary/20">
-              <h4 className="font-semibold text-foreground mb-2">
-                DAMA UK Community Leadership
-              </h4>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Actively engaged in the DAMA UK community through mentoring and
-                leadership, contributing to the advancement of data management
-                practices across the industry.
-              </p>
-            </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>
