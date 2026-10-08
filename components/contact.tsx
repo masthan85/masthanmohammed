@@ -42,7 +42,7 @@ export function Contact() {
                     </span>
                     <span className="min-w-0 flex-1">
                       <span className="block text-xs text-muted-foreground">{c.label}</span>
-                      <span className="block truncate text-sm font-medium text-foreground">{c.value}</span>
+                      <span className="block break-all text-sm font-medium text-foreground">{c.value}</span>
                     </span>
                     <ArrowUpRight size={16} className="text-muted-foreground transition-colors group-hover:text-primary" />
                   </Link>
