@@ -5,6 +5,5 @@ export const site = {
   phone: "+44 7825 444008",
   phoneHref: "tel:+447825444008",
   location: "London, United Kingdom",
-  // Replace with the full profile URL (https://www.linkedin.com/in/<handle>)
-  linkedin: "https://www.linkedin.com",
+  linkedin: "https://www.linkedin.com/in/masthan-mohammed-760672402",
 } as const;
