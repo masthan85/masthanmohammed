@@ -12,7 +12,7 @@ const experiences: {
 }[] = [
   {
     period: "Sep 2026 – Present",
-    role: "Senior Data Architect",
+    role: "Technology Architect",
     company: "Kezban",
     description:
       "Joined in September 2026 to lead data architecture and AI-enabled data platform delivery.",

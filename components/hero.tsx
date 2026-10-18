@@ -117,7 +117,7 @@ export function Hero() {
               <div>
                 <p className="font-semibold text-foreground">Masthan Mohammed</p>
                 <p className="text-sm text-muted-foreground">
-                  Senior Data Architect · Kezban
+                  Technology Architect · Kezban
                 </p>
               </div>
             </div>
