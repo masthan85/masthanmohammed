@@ -2,14 +2,34 @@ import { Reveal } from "./reveal";
 import { Years } from "./years";
 import { SectionHeading } from "./section-heading";
 
-const experiences = [
+const experiences: {
+  period: string;
+  role: string;
+  company: string;
+  location?: string;
+  description: string;
+  technologies: string[];
+}[] = [
   {
-    period: "Current",
+    period: "Sep 2026 – Present",
+    role: "Senior Data Architect",
+    company: "Kezban",
+    description:
+      "Joined in September 2026 to lead data architecture and AI-enabled data platform delivery.",
+    technologies: [
+      "Data Architecture",
+      "Databricks",
+      "AI-Enabled Delivery",
+      "Data Governance",
+    ],
+  },
+  {
+    period: "Oct 2021 – Sep 2026",
     role: "Technology Lead | Senior Data Architect",
     company: "Infosys Limited",
     location: "United Kingdom",
     description:
-      "Leading large-scale migration from AWS Athena-based analytics to Databricks lakehouse environments. Applying large language models to extract, validate, and regenerate legacy business logic, achieving significant acceleration in delivery cycles.",
+      "Led large-scale migration from AWS Athena-based analytics to Databricks lakehouse environments. Applied large language models to extract, validate, and regenerate legacy business logic, achieving significant acceleration in delivery cycles.",
     technologies: [
       "Databricks",
       "AWS",
@@ -74,7 +94,7 @@ export function Experience() {
                       {exp.role}
                     </h3>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      {exp.company} · {exp.location}
+                      {exp.location ? `${exp.company} · ${exp.location}` : exp.company}
                     </p>
                   </div>
 
