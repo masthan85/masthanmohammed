@@ -5,29 +5,23 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
-  { name: "About", href: "#about" },
+  { name: "Capabilities", href: "#about" },
   { name: "Experience", href: "#experience" },
-  { name: "Skills", href: "#skills" },
+  { name: "Expertise", href: "#skills" },
   { name: "Recognition", href: "#certifications" },
 ];
 
 export function Navigation() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [active, setActive] = useState("");
-
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 24);
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   useEffect(() => {
     const ids = ["top", ...navItems.map((i) => i.href.slice(1)), "contact"];
     const io = new IntersectionObserver(
       (entries) => {
-        entries.forEach((e) => e.isIntersecting && setActive(e.target.id === "top" ? "" : e.target.id));
+        entries.forEach(
+          (e) => e.isIntersecting && setActive(e.target.id === "top" ? "" : e.target.id),
+        );
       },
       { rootMargin: "-40% 0px -55% 0px" },
     );
@@ -39,33 +33,31 @@ export function Navigation() {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 px-4 pt-4">
-      <nav
-        className={`mx-auto max-w-[1400px] rounded-2xl px-5 py-3 transition-all duration-300 ${
-          isScrolled || isMobileMenuOpen
-            ? "bg-background/70 backdrop-blur-xl border border-border shadow-lg shadow-black/30"
-            : "border border-transparent"
-        }`}
-      >
-        <div className="flex items-center justify-between">
-          <Link
-            href="#top"
-            className="flex items-center gap-2 font-semibold text-foreground"
-          >
-            <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-primary to-sky-400 text-primary-foreground text-sm font-bold">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-background/95 px-6 backdrop-blur lg:px-10">
+      <nav className="mx-auto max-w-[1400px]">
+        <div className="flex h-16 items-center justify-between">
+          <Link href="#top" className="flex items-center gap-3">
+            <span className="grid h-9 w-9 place-items-center rounded-sm bg-navy font-serif text-sm font-semibold text-white">
               MM
             </span>
-            <span className="hidden sm:inline text-sm">Masthan Mohammed</span>
+            <span className="leading-tight">
+              <span className="block text-sm font-semibold text-foreground">
+                Masthan Mohammed
+              </span>
+              <span className="hidden text-xs text-muted-foreground sm:block">
+                Data &amp; AI Architecture
+              </span>
+            </span>
           </Link>
 
-          <ul className="hidden md:flex items-center gap-1">
+          <ul className="hidden items-center gap-8 md:flex">
             {navItems.map((item) => (
               <li key={item.name}>
                 <Link
                   href={item.href}
-                  className={`rounded-lg px-3 py-2 text-sm transition-colors ${
+                  className={`relative py-5 text-sm transition-colors ${
                     active === item.href.slice(1)
-                      ? "text-primary bg-primary/10"
+                      ? "font-medium text-foreground after:absolute after:inset-x-0 after:-bottom-px after:h-0.5 after:bg-primary"
                       : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
@@ -73,10 +65,10 @@ export function Navigation() {
                 </Link>
               </li>
             ))}
-            <li className="ml-2">
+            <li>
               <Link
                 href="#contact"
-                className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity"
+                className="rounded-sm bg-navy px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-navy-soft"
               >
                 Contact
               </Link>
@@ -85,7 +77,7 @@ export function Navigation() {
 
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-foreground p-2"
+            className="p-2 text-foreground md:hidden"
             aria-label="Toggle menu"
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-menu"
@@ -95,13 +87,13 @@ export function Navigation() {
         </div>
 
         {isMobileMenuOpen && (
-          <ul id="mobile-menu" className="md:hidden mt-4 pb-2 flex flex-col gap-1">
+          <ul id="mobile-menu" className="flex flex-col border-t border-border pb-3 md:hidden">
             {[...navItems, { name: "Contact", href: "#contact" }].map((item) => (
               <li key={item.name}>
                 <Link
                   href={item.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="block rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-secondary hover:text-primary transition-colors"
+                  className="block py-3 text-sm text-muted-foreground hover:text-foreground"
                 >
                   {item.name}
                 </Link>

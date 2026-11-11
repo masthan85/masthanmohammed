@@ -1,156 +1,114 @@
-import { ArrowRight, Linkedin, Mail, MapPin, Sparkles } from "lucide-react";
+import { ArrowRight, Linkedin, Mail, MapPin } from "lucide-react";
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { Years } from "./years";
 
-const stats = [
-  { value: <><Years />+</>, label: "Years in enterprise data" },
-  { value: "2025", label: "DAMA UK & Global award recognition" },
-  { value: "4", label: "Microsoft Azure certifications" },
-  { value: "LLM", label: "AI-led legacy modernisation" },
+const facts: { label: string; value: React.ReactNode }[] = [
+  { label: "Experience", value: <><Years />+ years in enterprise data</> },
+  { label: "Current role", value: "Technology Architect, Kezban" },
+  { label: "Focus", value: "Databricks lakehouse · AI-enabled modernisation" },
+  { label: "Sectors", value: "Financial services · Capital markets · Energy" },
+  { label: "Recognition", value: "DAMA UK Practitioner Award 2025 (Runner-Up)" },
 ];
 
-const marquee = [
-  "Databricks",
-  "Lakehouse Architecture",
-  "LLM-Driven Modernisation",
-  "Apache Spark",
-  "Data Governance",
-  "Financial Services",
-  "AWS",
-  "Azure",
-  "Python",
-  "SQL",
+const metrics: { value: React.ReactNode; label: string }[] = [
+  { value: <><Years />+</>, label: "Years delivering enterprise data platforms" },
+  { value: "300+", label: "Enterprise database tables migrated to AWS" },
+  { value: "80%+", label: "Reduction in manual validation effort" },
+  { value: "100%", label: "Reconciliation accuracy on a treasury cloud migration" },
 ];
 
 export function Hero() {
   return (
-    <section
-      id="top"
-      className="relative isolate overflow-hidden min-h-screen flex flex-col justify-center px-6 lg:px-10 pt-28 pb-10"
-    >
-      {/* Background */}
-      <div aria-hidden className="absolute inset-0 -z-10 bg-grid" />
-      <div
-        aria-hidden
-        className="absolute -top-40 left-1/2 -z-10 h-[34rem] w-[34rem] -translate-x-1/2 rounded-full bg-primary/20 blur-[120px] animate-float"
-      />
-      <div
-        aria-hidden
-        className="absolute top-1/3 -right-40 -z-10 h-[28rem] w-[28rem] rounded-full bg-sky-500/15 blur-[120px]"
-      />
+    <>
+      <section
+        id="top"
+        className="relative isolate overflow-hidden bg-navy px-6 pb-20 pt-32 text-white lg:px-10 lg:pb-28 lg:pt-40"
+      >
+        <div aria-hidden className="absolute inset-0 -z-10 bg-hairline-grid [mask-image:linear-gradient(to_bottom_left,#000,transparent_70%)]" />
 
-      <div className="mx-auto grid w-full max-w-[1400px] flex-1 items-center gap-14 lg:grid-cols-[1.3fr_1fr] xl:gap-20">
-        <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-medium text-primary animate-fade-up">
-            <Sparkles size={14} />
-            Databricks · AI-enabled data modernisation
-          </span>
+        <div className="mx-auto grid max-w-[1400px] items-center gap-14 lg:grid-cols-[1.4fr_1fr] xl:gap-24">
+          <div>
+            <p className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-sky-200 animate-fade-up">
+              <span className="h-2 w-2 bg-sky-300" />
+              Enterprise Data &amp; AI Architecture
+            </p>
 
-          <h1 className="mt-6 text-5xl md:text-7xl 2xl:text-8xl font-bold tracking-tight leading-[1.05] animate-fade-up [animation-delay:80ms]">
-            Hi, I&apos;m{" "}
-            <span className="text-gradient">Masthan Mohammed</span>
-          </h1>
+            <h1 className="mt-6 font-serif text-4xl font-semibold leading-[1.1] tracking-tight text-balance sm:text-5xl lg:text-6xl 2xl:text-7xl animate-fade-up [animation-delay:80ms]">
+              Governed, AI-ready data platforms for regulated enterprises.
+            </h1>
 
-          <p className="mt-4 text-xl md:text-2xl 2xl:text-3xl font-medium text-foreground/90 animate-fade-up [animation-delay:160ms]">
-            Senior Data Architect &amp; Principal Data Engineer
-          </p>
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300 2xl:text-xl animate-fade-up [animation-delay:160ms]">
+              <span className="font-medium text-white">{site.name}</span> is a
+              Senior Data Architect and Principal Data Engineer who designs and
+              delivers cloud data platforms across financial services and capital
+              markets, applying LLMs to extract, validate and regenerate legacy
+              business logic on the Databricks lakehouse.
+            </p>
 
-          <p className="mt-6 max-w-2xl text-lg 2xl:text-xl text-muted-foreground leading-relaxed animate-fade-up [animation-delay:240ms]">
-            I design and deliver enterprise-scale data platforms across
-            financial services, capital markets and regulated industries,
-            applying LLMs to extract, validate and regenerate legacy business
-            logic on the Databricks lakehouse.
-          </p>
-
-          <div className="mt-8 flex flex-col sm:flex-row gap-4 animate-fade-up [animation-delay:320ms]">
-            <Link
-              href="#contact"
-              className="group inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3.5 font-medium text-primary-foreground shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:-translate-y-0.5 transition-all"
-            >
-              Get in touch
-              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </Link>
-            <Link
-              href="#experience"
-              className="inline-flex items-center justify-center rounded-xl border border-border bg-card/60 px-6 py-3.5 font-medium text-foreground backdrop-blur hover:border-primary/60 hover:-translate-y-0.5 transition-all"
-            >
-              View experience
-            </Link>
-          </div>
-
-          <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-muted-foreground animate-fade-up [animation-delay:400ms]">
-            <span className="flex items-center gap-2">
-              <MapPin size={16} className="text-primary" />
-              {site.location}
-            </span>
-            <Link
-              href={`mailto:${site.email}`}
-              className="flex items-center gap-2 hover:text-primary transition-colors"
-            >
-              <Mail size={16} />
-              {site.email}
-            </Link>
-            <Link
-              href={site.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-primary transition-colors"
-            >
-              <Linkedin size={16} />
-              LinkedIn
-            </Link>
-          </div>
-        </div>
-
-        {/* Stat panel */}
-        <div className="relative w-full max-w-xl justify-self-end animate-fade-up [animation-delay:300ms]">
-          <div
-            aria-hidden
-            className="absolute -inset-px rounded-3xl bg-gradient-to-br from-primary/60 via-transparent to-sky-400/40 opacity-70 blur-sm"
-          />
-          <div className="relative rounded-3xl border border-border bg-card/80 p-6 2xl:p-8 backdrop-blur-xl">
-            <div className="mb-6 flex items-center gap-4">
-              <div className="grid h-16 w-16 place-items-center rounded-2xl bg-gradient-to-br from-primary to-sky-400 text-2xl font-bold text-primary-foreground">
-                MM
-              </div>
-              <div>
-                <p className="font-semibold text-foreground">Masthan Mohammed</p>
-                <p className="text-sm text-muted-foreground">
-                  Technology Architect · Kezban
-                </p>
-              </div>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row animate-fade-up [animation-delay:240ms]">
+              <Link
+                href="#contact"
+                className="group inline-flex items-center justify-center gap-2 rounded-sm bg-white px-6 py-3.5 font-medium text-navy transition-colors hover:bg-slate-100"
+              >
+                Get in touch
+                <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+              </Link>
+              <Link
+                href="#experience"
+                className="inline-flex items-center justify-center rounded-sm border border-white/30 px-6 py-3.5 font-medium text-white transition-colors hover:border-white hover:bg-white/10"
+              >
+                View experience
+              </Link>
             </div>
-            <div className="grid grid-cols-2 gap-3">
-              {stats.map((s) => (
-                <div
-                  key={s.label}
-                  className="rounded-2xl border border-border bg-background/60 p-4"
-                >
-                  <p className="text-3xl 2xl:text-4xl font-bold text-gradient">{s.value}</p>
-                  <p className="mt-1 text-xs leading-snug text-muted-foreground">
-                    {s.label}
-                  </p>
+
+            <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-slate-300 animate-fade-up [animation-delay:320ms]">
+              <span className="flex items-center gap-2">
+                <MapPin size={16} className="text-sky-300" />
+                {site.location}
+              </span>
+              <Link href={`mailto:${site.email}`} className="flex items-center gap-2 hover:text-white">
+                <Mail size={16} className="text-sky-300" />
+                {site.email}
+              </Link>
+              <Link href={site.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white">
+                <Linkedin size={16} className="text-sky-300" />
+                LinkedIn
+              </Link>
+            </div>
+          </div>
+
+          <aside className="rounded-sm border border-white/15 bg-white/[0.04] p-7 backdrop-blur-sm animate-fade-up [animation-delay:200ms] 2xl:p-9">
+            <h2 className="text-xs font-semibold uppercase tracking-[0.18em] text-sky-200">
+              At a glance
+            </h2>
+            <dl className="mt-5 divide-y divide-white/10">
+              {facts.map((f) => (
+                <div key={f.label} className="grid grid-cols-[110px_1fr] gap-4 py-3.5 text-sm">
+                  <dt className="text-slate-400">{f.label}</dt>
+                  <dd className="font-medium text-white">{f.value}</dd>
                 </div>
               ))}
+            </dl>
+          </aside>
+        </div>
+      </section>
+
+      {/* Metrics band */}
+      <section aria-label="Selected outcomes" className="border-b border-border bg-card px-6 lg:px-10">
+        <dl className="mx-auto grid max-w-[1400px] grid-cols-2 divide-border lg:grid-cols-4 lg:divide-x">
+          {metrics.map((m, i) => (
+            <div key={i} className="flex flex-col-reverse justify-end px-0 py-8 lg:px-8 lg:first:pl-0 lg:last:pr-0">
+              <dt className="mt-2 max-w-[16rem] text-sm leading-snug text-muted-foreground">
+                {m.label}
+              </dt>
+              <dd className="font-serif text-4xl font-semibold tracking-tight text-primary 2xl:text-5xl">
+                {m.value}
+              </dd>
             </div>
-          </div>
-        </div>
-      </div>
-      {/* Tech marquee */}
-      <div
-        aria-hidden
-        className="mx-auto mt-14 w-full max-w-[1400px] overflow-hidden border-y border-border/60 py-4 [mask-image:linear-gradient(to_right,transparent,#000_12%,#000_88%,transparent)]"
-      >
-        <div className="flex w-max animate-marquee gap-10 text-sm font-medium text-muted-foreground">
-          {[...marquee, ...marquee].map((item, i) => (
-            <span key={i} className="flex items-center gap-10 whitespace-nowrap">
-              {item}
-              <span className="h-1 w-1 rounded-full bg-primary/60" />
-            </span>
           ))}
-        </div>
-      </div>
-    </section>
+        </dl>
+      </section>
+    </>
   );
 }

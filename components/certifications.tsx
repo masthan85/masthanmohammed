@@ -24,64 +24,54 @@ const awards = [
 
 export function Certifications() {
   return (
-    <section id="certifications" className="py-28 px-6 lg:px-10 bg-card/40 border-y border-border">
-      <div className="max-w-[1400px] mx-auto">
+    <section id="certifications" className="border-y border-border bg-secondary/60 px-6 py-24 lg:px-10">
+      <div className="mx-auto max-w-[1400px]">
         <Reveal>
           <SectionHeading eyebrow="Recognition" title="Certifications & awards" />
         </Reveal>
 
-        <div className="grid lg:grid-cols-2 gap-10">
+        <div className="grid gap-12 lg:grid-cols-2 xl:gap-20">
           <Reveal>
-            <h3 className="mb-5 flex items-center gap-2 text-lg font-semibold text-foreground">
-              <Award className="text-primary" size={22} />
+            <h3 className="mb-2 flex items-center gap-2 border-b-2 border-foreground pb-3 text-sm font-semibold uppercase tracking-[0.14em] text-foreground">
+              <Award className="text-primary" size={18} />
               Professional certifications
             </h3>
-            <div className="grid sm:grid-cols-2 gap-4 xl:gap-5">
+            <ul className="divide-y divide-border">
               {certifications.map((cert) => (
-                <div
-                  key={cert.title}
-                  className="rounded-2xl border border-border bg-background/60 p-5 transition-all hover:-translate-y-1 hover:border-primary/50"
-                >
-                  <p className="text-xs font-semibold uppercase tracking-wider text-primary">
+                <li key={cert.title} className="flex items-baseline justify-between gap-4 py-4">
+                  <span className="font-medium text-foreground">{cert.title}</span>
+                  <span className="shrink-0 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                     {cert.issuer}
-                  </p>
-                  <h4 className="mt-2 font-medium text-foreground leading-snug">
-                    {cert.title}
-                  </h4>
-                </div>
+                  </span>
+                </li>
               ))}
-            </div>
+            </ul>
           </Reveal>
 
-          <Reveal delay={120}>
-            <h3 className="mb-5 flex items-center gap-2 text-lg font-semibold text-foreground">
-              <Trophy className="text-primary" size={22} />
+          <Reveal delay={80}>
+            <h3 className="mb-2 flex items-center gap-2 border-b-2 border-foreground pb-3 text-sm font-semibold uppercase tracking-[0.14em] text-foreground">
+              <Trophy className="text-primary" size={18} />
               Industry recognition
             </h3>
-            <div className="space-y-4">
+            <ul className="divide-y divide-border">
               {awards.map((award) => (
-                <div
-                  key={award.title}
-                  className="rounded-2xl border border-primary/25 bg-gradient-to-br from-primary/10 to-transparent p-5"
-                >
-                  <h4 className="font-medium text-foreground">{award.title}</h4>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    {award.description}
-                  </p>
-                </div>
+                <li key={award.title} className="py-4">
+                  <p className="font-medium text-foreground">{award.title}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{award.description}</p>
+                </li>
               ))}
-              <div className="rounded-2xl border border-border bg-background/60 p-5">
-                <h4 className="flex items-center gap-2 font-medium text-foreground">
-                  <HeartHandshake size={18} className="text-primary" />
+              <li className="py-4">
+                <p className="flex items-center gap-2 font-medium text-foreground">
+                  <HeartHandshake size={16} className="text-primary" />
                   DAMA UK community leadership
-                </h4>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                </p>
+                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
                   Actively engaged in the DAMA UK community through mentoring
                   and leadership, contributing to the advancement of data
                   management practices across the industry.
                 </p>
-              </div>
-            </div>
+              </li>
+            </ul>
           </Reveal>
         </div>
       </div>

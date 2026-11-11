@@ -1,9 +1,10 @@
 import type { Metadata, Viewport } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Geist, Geist_Mono, Source_Serif_4 } from 'next/font/google'
 import { yearsOfExperience } from '@/lib/experience'
 import './globals.css'
 
 const geistSans = Geist({ subsets: ['latin'], variable: '--font-geist-sans' })
+const serif = Source_Serif_4({ subsets: ['latin'], variable: '--font-serif-display' })
 const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono' })
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
@@ -42,8 +43,8 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: '#0d1117',
-  colorScheme: 'dark',
+  themeColor: '#0f1d3a',
+  colorScheme: 'light',
 }
 
 export default function RootLayout({
@@ -54,12 +55,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`dark bg-background ${geistSans.variable} ${geistMono.variable}`}
+      className={`bg-background ${geistSans.variable} ${geistMono.variable} ${serif.variable}`}
     >
       <body className="font-sans antialiased">
         <a
           href="#about"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-navy focus:px-4 focus:py-2 focus:text-white"
         >
           Skip to content
         </a>
