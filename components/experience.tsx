@@ -73,48 +73,53 @@ const experiences: {
 
 export function Experience() {
   return (
-    <section id="experience" className="py-28 px-6 lg:px-10 bg-card/40 border-y border-border">
-      <div className="max-w-[1400px] mx-auto">
+    <section id="experience" className="border-y border-border bg-secondary/60 px-6 py-24 lg:px-10">
+      <div className="mx-auto max-w-[1400px]">
         <Reveal>
-          <SectionHeading eyebrow="Experience" title={<><Years />+ years of data excellence</>} />
+          <SectionHeading
+            eyebrow="Experience"
+            title={<><Years />+ years of data excellence</>}
+          />
         </Reveal>
 
-        <div className="relative ml-3 border-l border-border">
+        <div className="border-t border-foreground/20">
           {experiences.map((exp, index) => (
-            <Reveal key={index} delay={index * 100}>
-              <div className="group relative pl-10 pb-12 last:pb-0">
-                <span className="absolute -left-[7px] top-1.5 h-3.5 w-3.5 rounded-full bg-background ring-2 ring-primary shadow-[0_0_14px] shadow-primary/60 group-hover:scale-125 transition-transform" />
-
-                <div className="grid gap-6 rounded-2xl border border-border bg-card p-7 lg:grid-cols-[minmax(240px,340px)_1fr] lg:gap-12 transition-all group-hover:border-primary/50 group-hover:-translate-y-0.5">
-                  <div>
-                    <span className="inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary ring-1 ring-primary/20">
-                      {exp.period}
+            <Reveal key={index} delay={index * 60}>
+              <article className="grid gap-4 border-b border-border py-9 md:grid-cols-[220px_1fr] lg:grid-cols-[260px_1fr_1.4fr] lg:gap-10">
+                <div>
+                  <p className="text-sm font-medium text-foreground">{exp.period}</p>
+                  {index === 0 && (
+                    <span className="mt-2 inline-block rounded-sm bg-primary px-2 py-0.5 text-xs font-medium text-primary-foreground">
+                      Current
                     </span>
-                    <h3 className="mt-4 text-xl font-semibold text-foreground">
-                      {exp.role}
-                    </h3>
-                    <p className="mt-1 text-sm text-muted-foreground">
-                      {exp.location ? `${exp.company} · ${exp.location}` : exp.company}
-                    </p>
-                  </div>
-
-                  <div>
-                    <p className="text-muted-foreground leading-relaxed lg:text-lg">
-                      {exp.description}
-                    </p>
-                    <div className="mt-5 flex flex-wrap gap-2">
-                      {exp.technologies.map((tech) => (
-                        <span
-                          key={tech}
-                          className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-medium text-primary"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
+                  )}
                 </div>
-              </div>
+
+                <div>
+                  <h3 className="font-serif text-xl font-semibold text-foreground">
+                    {exp.role}
+                  </h3>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    {exp.location ? `${exp.company} · ${exp.location}` : exp.company}
+                  </p>
+                </div>
+
+                <div className="md:col-span-2 lg:col-span-1">
+                  <p className="leading-relaxed text-muted-foreground">
+                    {exp.description}
+                  </p>
+                  <ul className="mt-4 flex flex-wrap gap-2">
+                    {exp.technologies.map((tech) => (
+                      <li
+                        key={tech}
+                        className="rounded-sm border border-border bg-card px-2.5 py-1 text-xs font-medium text-foreground/80"
+                      >
+                        {tech}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </article>
             </Reveal>
           ))}
         </div>

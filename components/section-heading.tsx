@@ -2,22 +2,23 @@ export function SectionHeading({
   eyebrow,
   title,
   children,
+  className = "",
 }: {
   eyebrow: string;
   title: React.ReactNode;
   children?: React.ReactNode;
+  className?: string;
 }) {
   return (
-    <div className="mb-14 max-w-3xl">
-      <span className="inline-flex items-center gap-2 text-primary text-xs font-semibold tracking-[0.2em] uppercase">
-        <span className="h-px w-8 bg-primary/60" />
+    <div className={`mb-12 max-w-3xl ${className}`}>
+      <span className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
         {eyebrow}
       </span>
-      <h2 className="text-3xl md:text-5xl font-bold text-foreground mt-3 tracking-tight text-balance">
+      <h2 className="mt-3 font-serif text-3xl font-semibold tracking-tight text-foreground md:text-4xl text-balance">
         {title}
       </h2>
       {children && (
-        <p className="text-muted-foreground mt-5 leading-relaxed text-lg">
+        <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
           {children}
         </p>
       )}

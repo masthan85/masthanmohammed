@@ -31,11 +31,11 @@ const highlights = [
 
 export function About() {
   return (
-    <section id="about" className="py-28 px-6 lg:px-10">
-      <div className="max-w-[1400px] mx-auto">
+    <section id="about" className="px-6 py-24 lg:px-10">
+      <div className="mx-auto max-w-[1400px]">
         <Reveal>
           <SectionHeading
-            eyebrow="About"
+            eyebrow="Capabilities"
             title="Building data platforms that drive business value"
           >
             Senior Data Architect and Principal Data Engineer with extensive
@@ -46,17 +46,20 @@ export function About() {
           </SectionHeading>
         </Reveal>
 
-        <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-5">
+        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
           {highlights.map((item, i) => (
-            <Reveal key={item.title} delay={i * 80}>
-              <div className="card-glow group h-full rounded-2xl border border-border bg-card p-7 transition-all hover:-translate-y-1 hover:border-primary/50">
-                <div className="mb-5 grid h-12 w-12 place-items-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/20 transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                  <item.icon size={22} />
+            <Reveal key={item.title} delay={i * 60}>
+              <div className="h-full rounded-sm border border-border border-t-2 border-t-primary bg-card p-7 shadow-sm transition-shadow hover:shadow-md">
+                <div className="mb-6 flex items-center justify-between">
+                  <item.icon size={24} className="text-primary" />
+                  <span className="font-serif text-sm text-muted-foreground">
+                    0{i + 1}
+                  </span>
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">
+                <h3 className="mb-2 text-lg font-semibold text-foreground">
                   {item.title}
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-sm leading-relaxed text-muted-foreground">
                   {item.description}
                 </p>
               </div>

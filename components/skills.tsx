@@ -72,25 +72,26 @@ const skillCategories = [
 
 export function Skills() {
   return (
-    <section id="skills" className="py-28 px-6 lg:px-10">
-      <div className="max-w-[1400px] mx-auto">
+    <section id="skills" className="px-6 py-24 lg:px-10">
+      <div className="mx-auto max-w-[1400px]">
         <Reveal>
           <SectionHeading eyebrow="Expertise" title="Skills & technologies" />
         </Reveal>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid gap-x-10 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
           {skillCategories.map((category, i) => (
-            <Reveal key={category.title} delay={(i % 3) * 80}>
-              <div className="card-glow h-full rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:border-primary/50">
-                <h3 className="mb-4 text-base font-semibold text-foreground">
+            <Reveal key={category.title} delay={(i % 3) * 60}>
+              <div>
+                <h3 className="border-b-2 border-foreground pb-3 text-sm font-semibold uppercase tracking-[0.14em] text-foreground">
                   {category.title}
                 </h3>
-                <ul className="flex flex-wrap gap-2">
+                <ul className="divide-y divide-border">
                   {category.skills.map((skill) => (
                     <li
                       key={skill}
-                      className="rounded-lg border border-border bg-background/60 px-3 py-1.5 text-xs text-muted-foreground transition-colors hover:border-primary/50 hover:text-primary"
+                      className="flex items-center gap-3 py-2.5 text-sm text-muted-foreground"
                     >
+                      <span className="h-1.5 w-1.5 shrink-0 bg-primary" />
                       {skill}
                     </li>
                   ))}

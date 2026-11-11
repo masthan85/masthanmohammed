@@ -11,56 +11,51 @@ const channels = [
 
 export function Contact() {
   return (
-    <section id="contact" className="px-6 lg:px-10 pt-28 pb-10">
-      <div className="max-w-6xl mx-auto">
+    <section id="contact" className="bg-navy px-6 text-white lg:px-10">
+      <div className="mx-auto max-w-[1400px] pb-8 pt-24">
         <Reveal>
-          <div className="relative overflow-hidden rounded-3xl border border-primary/30 bg-card p-8 md:p-14 text-center">
-            <div aria-hidden className="absolute inset-0 -z-0 bg-grid opacity-60" />
-            <div aria-hidden className="absolute -top-24 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-primary/25 blur-[90px]" />
-            <div className="relative">
-              <span className="text-primary text-xs font-semibold tracking-[0.2em] uppercase">
+          <div className="grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:gap-24">
+            <div>
+              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-sky-200">
                 Contact
               </span>
-              <h2 className="mt-3 text-3xl md:text-5xl font-bold tracking-tight text-balance">
-                Let&apos;s build something <span className="text-gradient">great</span> with data
+              <h2 className="mt-3 font-serif text-3xl font-semibold tracking-tight text-balance md:text-5xl">
+                Let&apos;s discuss your data &amp; AI priorities
               </h2>
-              <p className="mx-auto mt-5 max-w-xl text-muted-foreground text-lg">
+              <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate-300">
                 Interested in data architecture, AI-enabled solutions, or
                 potential collaborations? Feel free to reach out.
               </p>
-
-              <div className="mt-10 grid gap-4 sm:grid-cols-3 text-left">
-                {channels.map((c) => (
-                  <Link
-                    key={c.label}
-                    href={c.href}
-                    {...(c.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                    className="group flex items-center gap-3 rounded-2xl border border-border bg-background/70 p-4 backdrop-blur transition-all hover:-translate-y-1 hover:border-primary/60"
-                  >
-                    <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-primary/10 text-primary">
-                      <c.icon size={18} />
-                    </span>
-                    <span className="min-w-0 flex-1">
-                      <span className="block text-xs text-muted-foreground">{c.label}</span>
-                      <span className="block break-all text-sm font-medium text-foreground">{c.value}</span>
-                    </span>
-                    <ArrowUpRight size={16} className="text-muted-foreground transition-colors group-hover:text-primary" />
-                  </Link>
-                ))}
-              </div>
-
-              <p className="mt-8 flex items-center justify-center gap-2 text-sm text-muted-foreground">
-                <MapPin size={16} className="text-primary" />
+              <p className="mt-8 flex items-center gap-2 text-sm text-slate-300">
+                <MapPin size={16} className="text-sky-300" />
                 {site.location}
               </p>
             </div>
+
+            <ul className="self-start divide-y divide-white/15 border-y border-white/15">
+              {channels.map((c) => (
+                <li key={c.label}>
+                  <Link
+                    href={c.href}
+                    {...(c.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                    className="group flex items-center gap-4 py-5 transition-colors hover:bg-white/5 sm:px-2"
+                  >
+                    <c.icon size={20} className="shrink-0 text-sky-300" />
+                    <span className="min-w-0 flex-1">
+                      <span className="block text-xs uppercase tracking-wider text-slate-400">{c.label}</span>
+                      <span className="block break-all font-medium">{c.value}</span>
+                    </span>
+                    <ArrowUpRight size={18} className="text-slate-400 transition-colors group-hover:text-white" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </Reveal>
 
-        <footer className="mt-12 border-t border-border pt-6 text-center">
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} {site.name}. All rights reserved.
-          </p>
+        <footer className="mt-20 flex flex-col gap-2 border-t border-white/15 pt-6 text-sm text-slate-400 sm:flex-row sm:justify-between">
+          <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
+          <p>Data &amp; AI Architecture · {site.location}</p>
         </footer>
       </div>
     </section>
