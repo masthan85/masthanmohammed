@@ -7,13 +7,13 @@ const facts: { label: string; value: React.ReactNode }[] = [
   { label: "Experience", value: <><Years />+ years in enterprise data</> },
   { label: "Current role", value: "Technology Architect, Kezban" },
   { label: "Focus", value: "Databricks lakehouse · AI-enabled modernisation" },
-  { label: "Sectors", value: "Financial services · Capital markets · Energy" },
-  { label: "Recognition", value: "DAMA UK Practitioner Award 2025 (Runner-Up)" },
+  { label: "Sectors", value: "Financial Services · Capital Markets · Energy" },
+  { label: "Recognition", value: "DAMA UK Individual Practitioner Award 2025 (Runner-Up)" },
 ];
 
 const metrics: { value: React.ReactNode; label: string }[] = [
   { value: <><Years />+</>, label: "Years delivering enterprise data platforms" },
-  { value: "3", label: "Regulated sectors: financial services, capital markets and energy" },
+  { value: "3", label: "Regulated sectors: Financial Services, Capital Markets and Energy" },
   { value: "7", label: "Professional certifications across Microsoft, Anthropic, Salesforce and IBM" },
   { value: "2", label: "Industry awards in 2025, including DAMA UK Practitioner runner-up" },
 ];

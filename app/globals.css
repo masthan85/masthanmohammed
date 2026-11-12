@@ -138,6 +138,14 @@
   body {
     @apply bg-background text-foreground;
   }
+  /* Clear keyboard focus ring; white on the navy bands where blue would be lost. */
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+  .bg-navy :focus-visible {
+    outline-color: #fff;
+  }
 }
 
 /* ---------- Portfolio effects ---------- */

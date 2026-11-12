@@ -16,6 +16,7 @@ export function bookingEmbedUrl(): string {
   if (url.hostname.endsWith("cal.com")) {
     url.searchParams.set("embed", "true");
     url.searchParams.set("theme", "light");
+    url.searchParams.set("layout", "month_view");
   }
   if (url.hostname.endsWith("calendly.com")) {
     url.searchParams.set("hide_gdpr_banner", "1");

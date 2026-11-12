@@ -70,6 +70,13 @@ const skillCategories = [
   },
 ];
 
+const byName = (a: string, b: string) => a.localeCompare(b, "en", { sensitivity: "base" });
+
+// Always shown alphabetically, whatever order entries are added in above.
+const sortedCategories = [...skillCategories]
+  .sort((a, b) => byName(a.title, b.title))
+  .map((c) => ({ ...c, skills: [...c.skills].sort(byName) }));
+
 export function Skills() {
   return (
     <section id="skills" className="px-6 py-16 md:py-24 lg:px-10">
@@ -79,7 +86,7 @@ export function Skills() {
         </Reveal>
 
         <div className="grid gap-x-10 gap-y-9 md:grid-cols-2 md:gap-y-12 lg:grid-cols-3">
-          {skillCategories.map((category, i) => (
+          {sortedCategories.map((category, i) => (
             <Reveal key={category.title} delay={(i % 3) * 60}>
               <div>
                 <h3 className="border-b-2 border-foreground pb-3 text-sm font-semibold uppercase tracking-[0.14em] text-foreground">

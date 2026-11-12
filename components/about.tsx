@@ -7,19 +7,19 @@ const highlights = [
     icon: Database,
     title: "Enterprise Architecture",
     description:
-      "Designing and implementing large-scale data platforms for tier-one banks, asset managers, and energy companies.",
+      "Designing and implementing large-scale data platforms for tier-one banks, asset managers and energy companies.",
   },
   {
     icon: Brain,
     title: "AI-Enabled Delivery",
     description:
-      "Applying large language models to extract, validate, and regenerate legacy business logic with production-grade quality.",
+      "Applying large language models to extract, validate and regenerate legacy business logic with production-grade quality.",
   },
   {
     icon: Shield,
     title: "Data Governance",
     description:
-      "Ensuring regulatory compliance and data quality across financial services, capital markets, and treasury systems.",
+      "Ensuring regulatory compliance and data quality across financial services, capital markets and treasury systems.",
   },
   {
     icon: Users,
@@ -38,8 +38,8 @@ export function About() {
             eyebrow="Capabilities"
             title="Building data platforms that drive business value"
           >
-            Senior Data Architect and Principal Data Engineer with extensive
-            background supporting treasury systems, equity markets, and
+            Senior Data Architect and Principal Data Engineer with an extensive
+            background supporting treasury systems, equity markets and
             large-scale financial data environments for global organisations.
             Recognised through UK and global professional awards and engaged in
             the DAMA UK community through mentoring and leadership.

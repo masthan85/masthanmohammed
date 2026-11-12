@@ -56,8 +56,10 @@ There is one accent family (blue); do not add a second. The site is light only.
   rows separated by `white/15` rules, `hover:bg-white/5`.
 - Metric: serif figure in `primary` above a `text-sm` muted label.
 - Tag: `rounded-sm border bg-card px-2.5 py-1 text-xs`.
-- Scheduler: third-party booking page in an iframe on a `card` surface with a
-  `white/15` outline.
+- Scheduler: third-party booking page in a full-width iframe (at least 900px
+  wide, 620px tall) on a `card` surface with a `white/15` outline, shown from
+  `lg` up. Below that, a primary button opens the booking page instead.
+- Focus: 2px outline in `ring`, offset 2px; white on navy bands.
 
 ## Imagery and icons
 

@@ -4,13 +4,13 @@ import { SectionHeading } from "./section-heading";
 
 const certifications = [
   { title: "Azure AI Engineer Associate", issuer: "Microsoft" },
-  { title: "Claude Certified Architect – Foundations", issuer: "Anthropic" },
-  { title: "Salesforce Certified AI Associate", issuer: "Salesforce" },
-  { title: "IBM Quantum Consultant", issuer: "IBM" },
   { title: "Azure AI Fundamentals", issuer: "Microsoft" },
   { title: "Azure Data Fundamentals", issuer: "Microsoft" },
   { title: "Azure Fundamentals", issuer: "Microsoft" },
-];
+  { title: "Claude Certified Architect – Foundations", issuer: "Anthropic" },
+  { title: "IBM Quantum Consultant", issuer: "IBM" },
+  { title: "Salesforce Certified AI Associate", issuer: "Salesforce" },
+].sort((a, b) => a.title.localeCompare(b.title, "en", { sensitivity: "base" }));
 
 const awards = [
   {
@@ -41,9 +41,9 @@ export function Certifications() {
             </h3>
             <ul className="divide-y divide-border">
               {certifications.map((cert) => (
-                <li key={cert.title} className="flex items-baseline justify-between gap-4 py-4">
+                <li key={cert.title} className="grid grid-cols-[1fr_6.5rem] items-baseline gap-4 py-4">
                   <span className="font-medium text-foreground">{cert.title}</span>
-                  <span className="shrink-0 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                     {cert.issuer}
                   </span>
                 </li>

@@ -29,7 +29,7 @@ const experiences: {
     company: "Infosys Limited",
     location: "United Kingdom",
     description:
-      "Led large-scale migration from AWS Athena-based analytics to Databricks lakehouse environments. Applied large language models to extract, validate, and regenerate legacy business logic, achieving significant acceleration in delivery cycles.",
+      "Led a large-scale migration from AWS Athena-based analytics to Databricks lakehouse environments. Applied large language models to extract, validate and regenerate legacy business logic, achieving significant acceleration in delivery cycles.",
     technologies: [
       "Databricks",
       "AWS",
@@ -45,7 +45,7 @@ const experiences: {
     company: "Major Financial Institutions",
     location: "United Kingdom",
     description:
-      "Delivered enterprise-scale data platforms across financial services, capital markets, and regulated industries. Supported treasury systems, equity markets, and large-scale financial data environments for global organisations including tier-one banks and asset managers.",
+      "Delivered enterprise-scale data platforms across financial services, capital markets and regulated industries. Supported treasury systems, equity markets and large-scale financial data environments for global organisations including tier-one banks and asset managers.",
     technologies: [
       "SQL",
       "ETL",
@@ -60,11 +60,11 @@ const experiences: {
     company: "Various Organisations",
     location: "Global",
     description:
-      "Built foundational expertise in data architecture, platform design, and engineering across multiple industries. Developed deep understanding of data governance, quality frameworks, and regulatory compliance requirements.",
+      "Built foundational expertise in data architecture, platform design and engineering across multiple industries. Developed a deep understanding of data governance, quality frameworks and regulatory compliance requirements.",
     technologies: [
       "Database Design",
       "ETL Pipelines",
-      "Data Modeling",
+      "Data Modelling",
       "SQL Server",
       "Oracle",
     ],
