@@ -31,7 +31,7 @@ const highlights = [
 
 export function About() {
   return (
-    <section id="about" className="px-6 py-24 lg:px-10">
+    <section id="about" className="px-6 py-16 md:py-24 lg:px-10">
       <div className="mx-auto max-w-[1400px]">
         <Reveal>
           <SectionHeading
@@ -46,11 +46,11 @@ export function About() {
           </SectionHeading>
         </Reveal>
 
-        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="grid gap-4 sm:grid-cols-2 sm:gap-6 xl:grid-cols-4">
           {highlights.map((item, i) => (
             <Reveal key={item.title} delay={i * 60}>
-              <div className="h-full rounded-sm border border-border border-t-2 border-t-primary bg-card p-7 shadow-sm transition-shadow hover:shadow-md">
-                <div className="mb-6 flex items-center justify-between">
+              <div className="h-full rounded-sm border border-border border-t-2 border-t-primary bg-card p-5 shadow-sm sm:p-7 transition-shadow hover:shadow-md">
+                <div className="mb-4 flex items-center justify-between sm:mb-6">
                   <item.icon size={24} className="text-primary" />
                   <span className="font-serif text-sm text-muted-foreground">
                     0{i + 1}

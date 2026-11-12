@@ -1,4 +1,4 @@
-import { ArrowUpRight, Linkedin, MapPin } from "lucide-react";
+import { ArrowUpRight, CalendarDays, Linkedin, MapPin } from "lucide-react";
 import Link from "next/link";
 import { bookingEmbedUrl, site } from "@/lib/site";
 import { Reveal } from "./reveal";
@@ -11,7 +11,7 @@ export function Contact() {
 
   return (
     <section id="contact" className="bg-navy px-6 text-white lg:px-10">
-      <div className="mx-auto max-w-[1400px] pb-8 pt-24">
+      <div className="mx-auto max-w-[1400px] pb-8 pt-16 md:pt-24">
         <Reveal>
           <div className="grid gap-12 lg:grid-cols-[1fr_1.25fr] lg:gap-20">
             <div>
@@ -27,7 +27,21 @@ export function Contact() {
                   : "Interested in data architecture, AI-enabled solutions or a potential collaboration? Send a message on LinkedIn."}
               </p>
 
-              <ul className="mt-9 divide-y divide-white/15 border-y border-white/15">
+              {/* Phones book on Cal.com's own mobile page; an embedded calendar
+                  is cramped at this width and traps scrolling. */}
+              {embedUrl && (
+                <Link
+                  href={site.bookingUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-8 flex items-center justify-center gap-2 rounded-sm bg-white px-6 py-3.5 font-medium text-navy transition-colors hover:bg-slate-100 md:hidden"
+                >
+                  <CalendarDays size={18} />
+                  Choose a time
+                </Link>
+              )}
+
+              <ul className="mt-8 divide-y divide-white/15 border-y border-white/15">
                 <li>
                   <Link
                     href={site.linkedin}
@@ -54,7 +68,7 @@ export function Contact() {
             </div>
 
             {embedUrl && (
-              <div className="overflow-hidden rounded-sm border border-white/15 bg-card">
+              <div className="hidden overflow-hidden rounded-sm border border-white/15 bg-card md:block">
                 <iframe
                   src={embedUrl}
                   title={`Book a meeting with ${site.name}`}
@@ -66,7 +80,7 @@ export function Contact() {
           </div>
         </Reveal>
 
-        <footer className="mt-20 flex flex-col gap-2 border-t border-white/15 pt-6 text-sm text-slate-400 sm:flex-row sm:justify-between">
+        <footer className="mt-14 flex md:mt-20 flex-col gap-2 border-t border-white/15 pt-6 text-sm text-slate-400 sm:flex-row sm:justify-between">
           <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
           <p>Data &amp; AI Architecture · {site.location}</p>
         </footer>

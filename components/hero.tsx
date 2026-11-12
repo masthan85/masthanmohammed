@@ -23,7 +23,7 @@ export function Hero() {
     <>
       <section
         id="top"
-        className="relative isolate overflow-hidden bg-navy px-6 pb-20 pt-32 text-white lg:px-10 lg:pb-28 lg:pt-40"
+        className="relative isolate overflow-hidden bg-navy px-6 pb-14 pt-24 text-white sm:pb-20 sm:pt-32 lg:px-10 lg:pb-28 lg:pt-40"
       >
         <div aria-hidden className="absolute inset-0 -z-10 bg-hairline-grid [mask-image:linear-gradient(to_bottom_left,#000,transparent_70%)]" />
 
@@ -34,11 +34,11 @@ export function Hero() {
               Enterprise Data &amp; AI Architecture
             </p>
 
-            <h1 className="mt-6 font-serif text-4xl font-semibold leading-[1.1] tracking-tight text-balance sm:text-5xl lg:text-6xl 2xl:text-7xl animate-fade-up [animation-delay:80ms]">
+            <h1 className="mt-5 font-serif text-4xl font-semibold leading-[1.1] tracking-tight text-balance sm:text-5xl lg:text-6xl 2xl:text-7xl animate-fade-up [animation-delay:80ms]">
               Governed, AI-ready data platforms for regulated enterprises.
             </h1>
 
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300 2xl:text-xl animate-fade-up [animation-delay:160ms]">
+            <p className="mt-5 max-w-2xl text-base leading-relaxed sm:mt-6 sm:text-lg text-slate-300 2xl:text-xl animate-fade-up [animation-delay:160ms]">
               <span className="font-medium text-white">{site.name}</span> is a
               Senior Data Architect and Principal Data Engineer who designs and
               delivers cloud data platforms across financial services and capital
@@ -46,7 +46,7 @@ export function Hero() {
               business logic on the Databricks lakehouse.
             </p>
 
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row animate-fade-up [animation-delay:240ms]">
+            <div className="mt-7 flex flex-col gap-3 sm:mt-9 sm:flex-row animate-fade-up [animation-delay:240ms]">
               <Link
                 href="#contact"
                 className="group inline-flex items-center justify-center gap-2 rounded-sm bg-white px-6 py-3.5 font-medium text-navy transition-colors hover:bg-slate-100"
@@ -62,19 +62,19 @@ export function Hero() {
               </Link>
             </div>
 
-            <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-slate-300 animate-fade-up [animation-delay:320ms]">
+            <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-1 text-sm sm:mt-10 text-slate-300 animate-fade-up [animation-delay:320ms]">
               <span className="flex items-center gap-2">
                 <MapPin size={16} className="text-sky-300" />
                 {site.location}
               </span>
-              <Link href={site.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white">
+              <Link href={site.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 py-2.5 hover:text-white">
                 <Linkedin size={16} className="text-sky-300" />
                 LinkedIn
               </Link>
             </div>
           </div>
 
-          <aside className="rounded-sm border border-white/15 bg-white/[0.04] p-7 backdrop-blur-sm animate-fade-up [animation-delay:200ms] 2xl:p-9">
+          <aside className="rounded-sm border border-white/15 bg-white/[0.04] p-5 backdrop-blur-sm sm:p-7 animate-fade-up [animation-delay:200ms] 2xl:p-9">
             <h2 className="text-xs font-semibold uppercase tracking-[0.18em] text-sky-200">
               At a glance
             </h2>
@@ -94,7 +94,7 @@ export function Hero() {
       <section aria-label="Selected outcomes" className="border-b border-border bg-card px-6 lg:px-10">
         <dl className="mx-auto grid max-w-[1400px] grid-cols-2 gap-x-6 divide-border lg:grid-cols-4 lg:gap-x-0 lg:divide-x">
           {metrics.map((m, i) => (
-            <div key={i} className="flex flex-col-reverse justify-end px-0 py-8 lg:px-8 lg:first:pl-0 lg:last:pr-0">
+            <div key={i} className="flex flex-col-reverse justify-end px-0 py-6 sm:py-8 lg:px-8 lg:first:pl-0 lg:last:pr-0">
               <dt className="mt-2 max-w-[16rem] text-sm leading-snug text-muted-foreground">
                 {m.label}
               </dt>

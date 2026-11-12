@@ -93,7 +93,7 @@ export function Navigation() {
                 <Link
                   href={item.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="block py-3 text-sm text-muted-foreground hover:text-foreground"
+                  className="block py-3 text-base text-foreground"
                 >
                   {item.name}
                 </Link>

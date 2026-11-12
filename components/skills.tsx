@@ -72,20 +72,31 @@ const skillCategories = [
 
 export function Skills() {
   return (
-    <section id="skills" className="px-6 py-24 lg:px-10">
+    <section id="skills" className="px-6 py-16 md:py-24 lg:px-10">
       <div className="mx-auto max-w-[1400px]">
         <Reveal>
           <SectionHeading eyebrow="Expertise" title="Skills & technologies" />
         </Reveal>
 
-        <div className="grid gap-x-10 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-x-10 gap-y-9 md:grid-cols-2 md:gap-y-12 lg:grid-cols-3">
           {skillCategories.map((category, i) => (
             <Reveal key={category.title} delay={(i % 3) * 60}>
               <div>
                 <h3 className="border-b-2 border-foreground pb-3 text-sm font-semibold uppercase tracking-[0.14em] text-foreground">
                   {category.title}
                 </h3>
-                <ul className="divide-y divide-border">
+                {/* Phones: compact tags. Larger screens: ruled list. */}
+                <ul className="mt-4 flex flex-wrap gap-2 md:hidden">
+                  {category.skills.map((skill) => (
+                    <li
+                      key={skill}
+                      className="rounded-sm border border-border bg-card px-2.5 py-1.5 text-sm text-foreground/80"
+                    >
+                      {skill}
+                    </li>
+                  ))}
+                </ul>
+                <ul className="hidden divide-y divide-border md:block">
                   {category.skills.map((skill) => (
                     <li
                       key={skill}

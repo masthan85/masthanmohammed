@@ -73,7 +73,7 @@ const experiences: {
 
 export function Experience() {
   return (
-    <section id="experience" className="border-y border-border bg-secondary/60 px-6 py-24 lg:px-10">
+    <section id="experience" className="border-y border-border bg-secondary/60 px-6 py-16 md:py-24 lg:px-10">
       <div className="mx-auto max-w-[1400px]">
         <Reveal>
           <SectionHeading
