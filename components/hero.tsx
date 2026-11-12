@@ -92,7 +92,7 @@ export function Hero() {
 
       {/* Metrics band */}
       <section aria-label="Selected outcomes" className="border-b border-border bg-card px-6 lg:px-10">
-        <dl className="mx-auto grid max-w-[1400px] grid-cols-2 divide-border lg:grid-cols-4 lg:divide-x">
+        <dl className="mx-auto grid max-w-[1400px] grid-cols-2 gap-x-6 divide-border lg:grid-cols-4 lg:gap-x-0 lg:divide-x">
           {metrics.map((m, i) => (
             <div key={i} className="flex flex-col-reverse justify-end px-0 py-8 lg:px-8 lg:first:pl-0 lg:last:pr-0">
               <dt className="mt-2 max-w-[16rem] text-sm leading-snug text-muted-foreground">
