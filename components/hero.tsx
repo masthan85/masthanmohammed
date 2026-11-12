@@ -14,8 +14,8 @@ const facts: { label: string; value: React.ReactNode }[] = [
 const metrics: { value: React.ReactNode; label: string }[] = [
   { value: <><Years />+</>, label: "Years delivering enterprise data platforms" },
   { value: "3", label: "Regulated sectors: financial services, capital markets and energy" },
-  { value: "80%+", label: "Reduction in manual validation effort" },
-  { value: "100%", label: "Reconciliation accuracy on a treasury cloud migration" },
+  { value: "4", label: "Microsoft Azure certifications, including AI Engineer Associate" },
+  { value: "2", label: "Industry awards in 2025, including DAMA UK Practitioner runner-up" },
 ];
 
 export function Hero() {
