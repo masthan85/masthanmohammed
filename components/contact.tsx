@@ -1,4 +1,4 @@
-import { ArrowUpRight, CalendarDays, Linkedin, MapPin } from "lucide-react";
+import { ArrowUpRight, Linkedin, MapPin } from "lucide-react";
 import Link from "next/link";
 import { bookingEmbedUrl, site } from "@/lib/site";
 import { Reveal } from "./reveal";
@@ -28,25 +28,6 @@ export function Contact() {
               </p>
 
               <ul className="mt-9 divide-y divide-white/15 border-y border-white/15">
-                {embedUrl && (
-                  <li>
-                    <Link
-                      href={site.bookingUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={linkRow}
-                    >
-                      <CalendarDays size={20} className="shrink-0 text-sky-300" />
-                      <span className="min-w-0 flex-1">
-                        <span className="block text-xs uppercase tracking-wider text-slate-400">
-                          Meeting
-                        </span>
-                        <span className="block font-medium">Open the booking page in a new tab</span>
-                      </span>
-                      <ArrowUpRight size={18} className="text-slate-400 transition-colors group-hover:text-white" />
-                    </Link>
-                  </li>
-                )}
                 <li>
                   <Link
                     href={site.linkedin}
