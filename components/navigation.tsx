@@ -32,11 +32,28 @@ export function Navigation() {
     return () => io.disconnect();
   }, []);
 
+  // While the phone menu is open it covers the screen: stop the page behind
+  // from scrolling, and close on Escape or when the screen grows to desktop.
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+    const close = () => setIsMobileMenuOpen(false);
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && close();
+    const desktop = window.matchMedia("(min-width: 768px)");
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKey);
+    desktop.addEventListener("change", close);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKey);
+      desktop.removeEventListener("change", close);
+    };
+  }, [isMobileMenuOpen]);
+
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-background/95 px-6 backdrop-blur lg:px-10">
       <nav className="mx-auto max-w-[1400px]">
         <div className="flex h-16 items-center justify-between">
-          <Link href="#top" className="flex items-center gap-3">
+          <Link href="#top" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-3">
             <span className="grid h-9 w-9 place-items-center rounded-sm bg-navy font-serif text-sm font-semibold text-white">
               MM
             </span>
@@ -78,7 +95,7 @@ export function Navigation() {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="p-2 text-foreground md:hidden"
-            aria-label="Toggle menu"
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-menu"
           >
@@ -87,19 +104,31 @@ export function Navigation() {
         </div>
 
         {isMobileMenuOpen && (
-          <ul id="mobile-menu" className="flex flex-col border-t border-border pb-3 md:hidden">
-            {[...navItems, { name: "Contact", href: "#contact" }].map((item) => (
-              <li key={item.name}>
-                <Link
-                  href={item.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block py-3 text-base text-foreground"
-                >
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <div
+            id="mobile-menu"
+            className="absolute inset-x-0 top-16 flex h-[calc(100dvh-4rem)] flex-col overflow-y-auto border-t border-border bg-background px-6 pb-8 md:hidden"
+          >
+            <ul className="divide-y divide-border">
+              {navItems.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block py-5 font-serif text-2xl font-semibold text-foreground"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <Link
+              href="#contact"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="mt-8 block rounded-sm bg-navy px-6 py-3.5 text-center font-medium text-white"
+            >
+              Contact
+            </Link>
+          </div>
         )}
       </nav>
     </header>
