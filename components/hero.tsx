@@ -1,4 +1,4 @@
-import { ArrowRight, Linkedin, Mail, MapPin } from "lucide-react";
+import { ArrowRight, Linkedin, MapPin } from "lucide-react";
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { Years } from "./years";
@@ -13,9 +13,9 @@ const facts: { label: string; value: React.ReactNode }[] = [
 
 const metrics: { value: React.ReactNode; label: string }[] = [
   { value: <><Years />+</>, label: "Years delivering enterprise data platforms" },
-  { value: "300+", label: "Enterprise database tables migrated to AWS" },
-  { value: "80%+", label: "Reduction in manual validation effort" },
-  { value: "100%", label: "Reconciliation accuracy on a treasury cloud migration" },
+  { value: "3", label: "Regulated sectors: financial services, capital markets and energy" },
+  { value: "7", label: "Professional certifications across Microsoft, Anthropic, Salesforce and IBM" },
+  { value: "2", label: "Industry awards in 2025, including DAMA UK Practitioner runner-up" },
 ];
 
 export function Hero() {
@@ -51,7 +51,7 @@ export function Hero() {
                 href="#contact"
                 className="group inline-flex items-center justify-center gap-2 rounded-sm bg-white px-6 py-3.5 font-medium text-navy transition-colors hover:bg-slate-100"
               >
-                Get in touch
+                {site.bookingUrl ? "Book a meeting" : "Get in touch"}
                 <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
@@ -67,10 +67,6 @@ export function Hero() {
                 <MapPin size={16} className="text-sky-300" />
                 {site.location}
               </span>
-              <Link href={`mailto:${site.email}`} className="flex items-center gap-2 hover:text-white">
-                <Mail size={16} className="text-sky-300" />
-                {site.email}
-              </Link>
               <Link href={site.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white">
                 <Linkedin size={16} className="text-sky-300" />
                 LinkedIn
@@ -96,7 +92,7 @@ export function Hero() {
 
       {/* Metrics band */}
       <section aria-label="Selected outcomes" className="border-b border-border bg-card px-6 lg:px-10">
-        <dl className="mx-auto grid max-w-[1400px] grid-cols-2 divide-border lg:grid-cols-4 lg:divide-x">
+        <dl className="mx-auto grid max-w-[1400px] grid-cols-2 gap-x-6 divide-border lg:grid-cols-4 lg:gap-x-0 lg:divide-x">
           {metrics.map((m, i) => (
             <div key={i} className="flex flex-col-reverse justify-end px-0 py-8 lg:px-8 lg:first:pl-0 lg:last:pr-0">
               <dt className="mt-2 max-w-[16rem] text-sm leading-snug text-muted-foreground">

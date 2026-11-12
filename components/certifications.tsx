@@ -4,6 +4,9 @@ import { SectionHeading } from "./section-heading";
 
 const certifications = [
   { title: "Azure AI Engineer Associate", issuer: "Microsoft" },
+  { title: "Claude Certified Architect – Foundations", issuer: "Anthropic" },
+  { title: "Salesforce Certified AI Associate", issuer: "Salesforce" },
+  { title: "IBM Quantum Consultant", issuer: "IBM" },
   { title: "Azure AI Fundamentals", issuer: "Microsoft" },
   { title: "Azure Data Fundamentals", issuer: "Microsoft" },
   { title: "Azure Fundamentals", issuer: "Microsoft" },
@@ -11,14 +14,14 @@ const certifications = [
 
 const awards = [
   {
-    title: "DAMA Practitioner Award 2025 (Runner-Up)",
+    title: "DAMA UK Individual Practitioner Award 2025 (Runner-Up)",
     description:
-      "Recognised for excellence in data management practice by DAMA UK",
+      "Recognised at the IRM UK Data & AI Conference Europe, London, October 2025",
   },
   {
     title: "Global Recognition Award 2025",
     description:
-      "Acknowledged for contributions to AI-enabled data modernisation practices",
+      "For contributions to enterprise data architecture, AI-driven analytics, treasury platform modernisation and cloud-native financial technology transformation",
   },
 ];
 
