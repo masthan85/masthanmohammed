@@ -6,7 +6,7 @@ export const site = {
   // Public scheduling page (Cal.com or Calendly), e.g. "https://cal.com/your-name/intro-call".
   // Bookings are emailed to the account behind this link, so no email address or
   // phone number needs to appear on the site. Leave empty to hide the scheduler.
-  bookingUrl: "",
+  bookingUrl: "https://cal.com/m-mohammed-kharbv/30min",
 } as const;
 
 /** The scheduling page URL prepared for inline embedding. */
