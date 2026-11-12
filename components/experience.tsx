@@ -2,16 +2,12 @@ import { Reveal } from "./reveal";
 import { Years } from "./years";
 import { SectionHeading } from "./section-heading";
 
-type Detail = { title: string; meta?: string; text: string };
-
 const experiences: {
   period: string;
   role: string;
   company: string;
   location?: string;
   description: string;
-  projects?: Detail[];
-  earlierRoles?: Detail[];
   technologies: string[];
 }[] = [
   {
@@ -28,106 +24,52 @@ const experiences: {
     ],
   },
   {
-    period: "Sep 2014 – Sep 2026",
-    role: "Principal Data Architect | Technology Lead",
+    period: "Oct 2021 – Sep 2026",
+    role: "Technology Lead | Senior Data Architect",
     company: "Infosys Limited",
-    location: "United Kingdom, France and India",
+    location: "United Kingdom",
     description:
-      "Twelve years with Infosys, the last five in London as Principal Data Architect leading data platform, treasury and cloud migration programmes for financial services clients: managing data engineering teams, setting data governance standards and owning delivery from requirements through to production.",
-    projects: [
-      {
-        title: "AI-assisted Databricks lakehouse delivery",
-        text: "Built AI agents that generate Python and SQL transformation code and test suites from a single specification. Delivered 283 tables and jobs in under 12 months against a two-to-three-year estimate, cutting per-object delivery from 5–8 days to 3 with zero production regressions.",
-      },
-      {
-        title: "Treasury data migration",
-        text: "Architected the ETL strategy and pipelines for the move from a legacy Wall Street application to FIS Quantum and Sierra, covering static and transactional data. Automated reconciliation and quality checks cut manual sign-off effort by over 80%.",
-      },
-      {
-        title: "Database migration from on-premise to AWS",
-        text: "Led the migration of 300+ database tables within a four-hour SLA, using a reusable, metadata-driven reconciliation framework and real-time Splunk dashboards in place of spreadsheet tracking.",
-      },
-      {
-        title: "Treasury analytics platform",
-        text: "Led design and delivery of a Microsoft Fabric platform with ML cash forecasting across five-year horizons for the CFO and treasury leadership. Standardised data capture reduced quarterly reconciliation variance from £2bn to under £50k.",
-      },
-    ],
-    earlierRoles: [
-      {
-        title: "Technology Lead, India",
-        meta: "From May 2019",
-        text: "Designed and built big data platforms with Hive and Impala on Cloudera, and set coding standards for platform engineering.",
-      },
-      {
-        title: "Technology Lead, France",
-        meta: "Nov 2017 – Apr 2019",
-        text: "Set up the Informatica infrastructure and reusable integration frameworks, ran monthly production releases and coordinated the offshore team as onsite lead.",
-      },
-      {
-        title: "Technology Lead, India",
-        meta: "Sep 2014 – Oct 2017",
-        text: "Led Informatica PowerCenter workflow development and Oracle module support, managed the Informatica upgrade and introduced CI/CD for database builds with Jenkins and Liquibase.",
-      },
-    ],
+      "Led large-scale migration from AWS Athena-based analytics to Databricks lakehouse environments. Applied large language models to extract, validate, and regenerate legacy business logic, achieving significant acceleration in delivery cycles.",
     technologies: [
       "Databricks",
-      "Microsoft Fabric",
       "AWS",
-      "Azure Synapse",
-      "Snowflake",
-      "Talend",
-      "Informatica",
+      "LLM",
       "Python",
-      "SQL",
-      "Splunk",
-      "Power BI",
-      "Azure DevOps",
+      "Spark",
+      "Data Governance",
     ],
   },
   {
-    period: "Mar 2008 – Jul 2014",
-    role: "Senior Software Engineer",
-    company: "Wipro Technologies",
-    location: "India",
+    period: "Previous",
+    role: "Senior Data Engineer",
+    company: "Major Financial Institutions",
+    location: "United Kingdom",
     description:
-      "Led a team of engineers designing and building data integration, warehousing and reporting solutions, and introduced agile delivery practices across projects.",
+      "Delivered enterprise-scale data platforms across financial services, capital markets, and regulated industries. Supported treasury systems, equity markets, and large-scale financial data environments for global organisations including tier-one banks and asset managers.",
     technologies: [
-      "Oracle PL/SQL",
-      "Informatica PowerCenter",
-      "SSIS",
-      "SSAS",
-      "Sybase T-SQL",
-      "Unix Shell",
+      "SQL",
+      "ETL",
+      "Data Warehousing",
+      "Financial Systems",
+      "Capital Markets",
+    ],
+  },
+  {
+    period: "Earlier Career",
+    role: "Data Engineer & Architect",
+    company: "Various Organisations",
+    location: "Global",
+    description:
+      "Built foundational expertise in data architecture, platform design, and engineering across multiple industries. Developed deep understanding of data governance, quality frameworks, and regulatory compliance requirements.",
+    technologies: [
+      "Database Design",
+      "ETL Pipelines",
+      "Data Modeling",
+      "SQL Server",
+      "Oracle",
     ],
   },
 ];
-
-function DetailList({ label, items }: { label: string; items: Detail[] }) {
-  return (
-    <div className="mt-7">
-      <h4 className="border-b-2 border-foreground pb-2 text-xs font-semibold uppercase tracking-[0.14em] text-foreground">
-        {label}
-      </h4>
-      <ul className="divide-y divide-border">
-        {items.map((item) => (
-          <li key={item.title + (item.meta ?? "")} className="py-4">
-            <p className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 font-medium text-foreground">
-              {item.title}
-              {item.meta && (
-                <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                  {item.meta}
-                </span>
-              )}
-            </p>
-            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-              {item.text}
-            </p>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
 
 export function Experience() {
   return (
@@ -166,9 +108,7 @@ export function Experience() {
                   <p className="leading-relaxed text-muted-foreground">
                     {exp.description}
                   </p>
-                  {exp.projects && <DetailList label="Key projects" items={exp.projects} />}
-                  {exp.earlierRoles && <DetailList label="Earlier roles" items={exp.earlierRoles} />}
-                  <ul className="mt-6 flex flex-wrap gap-2">
+                  <ul className="mt-4 flex flex-wrap gap-2">
                     {exp.technologies.map((tech) => (
                       <li
                         key={tech}
