@@ -14,7 +14,7 @@ const facts: { label: string; value: React.ReactNode }[] = [
 const metrics: { value: React.ReactNode; label: string }[] = [
   { value: <><Years />+</>, label: "Years delivering enterprise data platforms" },
   { value: "3", label: "Regulated sectors: financial services, capital markets and energy" },
-  { value: "4", label: "Microsoft Azure certifications, including AI Engineer Associate" },
+  { value: "7", label: "Professional certifications across Microsoft, Anthropic, Salesforce and IBM" },
   { value: "2", label: "Industry awards in 2025, including DAMA UK Practitioner runner-up" },
 ];
 
