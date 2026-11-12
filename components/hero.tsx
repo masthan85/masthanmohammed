@@ -1,4 +1,4 @@
-import { ArrowRight, Linkedin, Mail, MapPin } from "lucide-react";
+import { ArrowRight, Linkedin, MapPin } from "lucide-react";
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { Years } from "./years";
@@ -13,7 +13,7 @@ const facts: { label: string; value: React.ReactNode }[] = [
 
 const metrics: { value: React.ReactNode; label: string }[] = [
   { value: <><Years />+</>, label: "Years delivering enterprise data platforms" },
-  { value: "300+", label: "Enterprise database tables migrated to AWS" },
+  { value: "3", label: "Regulated sectors: financial services, capital markets and energy" },
   { value: "80%+", label: "Reduction in manual validation effort" },
   { value: "100%", label: "Reconciliation accuracy on a treasury cloud migration" },
 ];
@@ -51,7 +51,7 @@ export function Hero() {
                 href="#contact"
                 className="group inline-flex items-center justify-center gap-2 rounded-sm bg-white px-6 py-3.5 font-medium text-navy transition-colors hover:bg-slate-100"
               >
-                Get in touch
+                {site.bookingUrl ? "Book a meeting" : "Get in touch"}
                 <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
@@ -67,10 +67,6 @@ export function Hero() {
                 <MapPin size={16} className="text-sky-300" />
                 {site.location}
               </span>
-              <Link href={`mailto:${site.email}`} className="flex items-center gap-2 hover:text-white">
-                <Mail size={16} className="text-sky-300" />
-                {site.email}
-              </Link>
               <Link href={site.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white">
                 <Linkedin size={16} className="text-sky-300" />
                 LinkedIn
