@@ -57,7 +57,7 @@ There is one accent family (blue); do not add a second. The site is light only.
 - Metric: serif figure in `primary` above a `text-sm` muted label.
 - Tag: `rounded-sm border bg-card px-2.5 py-1 text-xs`.
 - Scheduler: third-party booking page in an iframe on a `card` surface with a
-  `white/15` outline, always paired with a link that opens it in a new tab.
+  `white/15` outline.
 
 ## Imagery and icons
 
