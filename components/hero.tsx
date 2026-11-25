@@ -1,5 +1,7 @@
 import { ArrowRight, Linkedin, MapPin } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
+import portrait from "@/assets/masthan-mohammed.webp";
 import { site } from "@/lib/site";
 import { Years } from "./years";
 
@@ -75,7 +77,22 @@ export function Hero() {
           </div>
 
           <aside className="rounded-sm border border-white/15 bg-white/[0.04] p-5 backdrop-blur-sm sm:p-7 animate-fade-up [animation-delay:200ms] 2xl:p-9">
-            <h2 className="text-xs font-semibold uppercase tracking-[0.18em] text-sky-200">
+            <div className="flex items-center gap-5 border-b border-white/10 pb-6">
+              <Image
+                src={portrait}
+                alt={`Portrait of ${site.name}`}
+                priority
+                sizes="(min-width: 640px) 128px, 104px"
+                className="aspect-[4/5] w-[104px] shrink-0 rounded-sm border border-white/15 object-cover sm:w-32"
+              />
+              <div>
+                <p className="font-serif text-xl font-semibold leading-tight tracking-tight text-white sm:text-2xl">
+                  {site.name}
+                </p>
+                <p className="mt-1.5 text-sm text-slate-300">{site.title}</p>
+              </div>
+            </div>
+            <h2 className="mt-6 text-xs font-semibold uppercase tracking-[0.18em] text-sky-200">
               At a glance
             </h2>
             <dl className="mt-5 divide-y divide-white/10">
