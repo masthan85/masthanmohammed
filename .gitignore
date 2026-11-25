@@ -13,5 +13,8 @@ next.user-config.*
 # Common ignores
 node_modules
 .next/
-.DS_Store*.tsbuildinfo
+.DS_Store
+*.tsbuildinfo
 out/
+# Playwright CLI output (may contain credentials)
+.playwright-cli/
